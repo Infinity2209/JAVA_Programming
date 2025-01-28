@@ -5,18 +5,19 @@ class Banking {
     static String Account_type;
     static int Account_no;
     static float Balance;
+
     Banking(String n, String A, int Ac, float B) {
-        name=n;
-        Account_type=A;
-        Account_no=Ac;
-        Balance=B;
+        name = n;
+        Account_type = A;
+        Account_no = Ac;
+        Balance = B;
     }
-    
+
     static float deposite(float a) {
         Balance = Balance + a;
         return (Balance);
     }
-    
+
     static float withdraw(float a) {
         if (a > Balance) {
             System.out.println("your balance is insufficient");
@@ -26,11 +27,14 @@ class Banking {
             return (Balance);
         }
     }
-    static void detail(){
-        System.out.println("Name of the user:" + name + "\nAccount Type is:" + Account_type + "\nAccount number is:"+ Account_no + "\nAvaiable Balance:" + Balance);
-       
+
+    static void detail() {
+        System.out.println("Name of the user:" + name + "\nAccount Type is:" + Account_type + "\nAccount number is:"
+                + Account_no + "\nAvaiable Balance:" + Balance);
+
     }
 }
+
 public class constructor {
     public static void main(String args[]) {
         try (Scanner SC = new Scanner(System.in)) {
@@ -56,7 +60,7 @@ public class constructor {
             if (opt == 0) {
                 // Balance = withdraw(amount);
                 System.out.println("your balance is:" + Banking.withdraw(amount));
-            } else if(opt==1) {
+            } else if (opt == 1) {
                 // Balance = deposite(amount);
                 System.out.println("your balance is:" + Banking.deposite(amount));
             }
@@ -64,5 +68,4 @@ public class constructor {
         }
     }
 
-    
 }
